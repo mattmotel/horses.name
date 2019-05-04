@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Cinzel|Proza+Libre" rel="stylesheet">
+  <style>
+body {
+margin:0;
+font-family: 'Cinzel', serif;
+text-align:center;
+font-size:1.2em;
+background:#000;
+color:white;
+}
+
+#list {
+display: flex;
+flex-wrap: wrap;
+
+}
+
+h1{letter-spacing:.5em;
+font-size:1em;
+font-weight:normal;
+line-height:2em;
+margin-top:-40px;}
+
+header{
+
+background-image:url(https://images.unsplash.com/photo-1517326451550-8612522c096e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);
+background-size:cover;
+padding:35vh 10vh;
+background-position:center center;
+position:relative;
+}
+.overlay{
+height:100%;
+width:100%;
+background:rgba(0,0,0,.5);
+position:absolute;
+top:0;
+left:0;
+z-index:1;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.box {
+padding:4em 3em;
+font-size:1em;
+letter-spacing:.15em;
+text-align:center;
+width:calc(33.333333333% - 6em);
+display: flex;
+align-items: center;
+justify-content: center;
+
+
+}
+h2{
+font-weight:normal;
+}
+
+.customers{
+padding:10px;
+font-family: 'Proza Libre', serif;
+font-size:.75em;
+background:rgba(20,20,20,.75);
+z-index:2;
+position:absolute;
+top:47vh;
+margin-left: auto;
+margin-right: auto;
+left: 0;
+right: 0;
+width:50%;
+}
+
+
+</style>
+</head>
+
+<body>
+  <script type="text/javascript">
+    $(function() {
+
+      var name = [
+
+        'Alabama Pajamas',
+
+        'Slipping on a Banana Peel',
+
+        'Fear of Commitment',
+
+        'Daddy’s Home',
+
+        'Brand New Socks',
+
+        'Traveling Salesman',
+
+        'Head, Shoulders, Knees &amp; Toes',
+
+        'Parent Teacher Association',
+
+        'All Spruced Up',
+
+        'Thunderboomer',
+
+        'Her Dance Card is Full',
+
+        'Cold Feet',
+
+        'All Talk and No Cider',
+
+        'God Save the Queen',
+
+        'The Bureau of Alcohol, Tobacco, Firearms and Explosives',
+
+        'Roy G. Biv',
+
+        'Extreme Conditions',
+
+        'The Philosopher King'
+
+      ];
+
+      name.sort(function() {
+        return 0.5 - Math.random()
+      });
+
+
+      name.forEach(function(element) {
+
+        var red = Math.floor(Math.random() * 255) + 1;
+        var blue = Math.floor(Math.random() * 150) + 1;
+        var green = Math.floor(Math.random() * 150) + 1;
+
+        var textColor = 'black';
+
+        var luma = red + green + blue;
+
+        if (luma < 450) {
+          var textColor = 'white';
+        }
+
+
+
+        document.getElementById('list').innerHTML += '<div class="box" style="background:rgb(' + red + ',' + green + ',' + blue + ');color:' + textColor + ';">' + element + '</div>';
+      });
+
+    });
+  </script>
+
+  <header>
+    <div class="overlay">
+
+      <h1>Horse Neighming<br />Consulants, Inc.</h1>
+
+
+
+
+    </div>
+
+
+
+  </header>
+
+  <div class="customers">
+
+
+    <p>Provider of quality horse naming services since 2019.</p>
+    <p>Don’t take it from us. Check out a list of sastified customers below.</p>
+
+
+  </div>
+
+
+
+  <div id="list"></div>
+
+  <!-- &#x1F40E; -->
+</body>
+
+</html>
