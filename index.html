@@ -5,12 +5,16 @@
   <meta charset="utf-8">
   <title>Horse Neighming Consultants, Inc.</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Cinzel|Proza+Libre" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Cinzel|Libre+Baskerville:400,400i" rel="stylesheet">
   <meta name="viewport" content="width=device-width, user-scalable=no" />
   <meta property="og:title" content="Horse Neighming Consultants, Inc." />
   <meta property="og:image" content="https://images.unsplash.com/photo-1517326451550-8612522c096e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" />
   <meta property="og:description"
   content="Provider of quality horse naming services since 2019." />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
 
 
@@ -36,6 +40,11 @@ font-size:1em;
 font-weight:normal;
 line-height:2em;
 margin-top:-40px;}
+
+
+h2{
+font-weight:normal;
+}
 
 header{
 
@@ -67,27 +76,34 @@ width:calc(33.333333333% - 6em);
 display: flex;
 align-items: center;
 justify-content: center;
-
-}
-
-
-h2{
-font-weight:normal;
 }
 
 .customers{
 padding:10px;
-font-family: 'Proza Libre', serif;
+font-family: 'Libre Baskerville', serif;
 font-size:.75em;
-background:rgba(20,20,20,.75);
 z-index:2;
 position:absolute;
-top:47vh;
+top:45vh;
 margin-left: auto;
 margin-right: auto;
 left: 0;
 right: 0;
 width:50%;
+}
+
+.contact{
+  font-size:2.25em;
+  position: fixed;
+  top:10px;
+  right:20px;
+  text-decoration: none;
+  color:white;
+  z-index: 10;
+  transition: 1s all;
+}
+.contact:hover{
+  font-size:2.75em;
 }
 
 @media (max-width: 800px) {
@@ -113,22 +129,6 @@ width:50%;
     width:80%;
     top:250px;
   }
-
-}
-
-.contact{
-  font-size:2.25em;
-  position: fixed;
-  top:10px;
-  right:20px;
-  text-decoration: none;
-  color:white;
-  z-index: 10;
-  transition: 1s all;
-}
-.contact:hover{
-  font-size:2.75em;
-
 }
 
 
@@ -187,14 +187,25 @@ width:50%;
 
         'Pork Roll, Egg, and Cheese',
 
-        'The Reasons You Don’t Sleep Well at Night'
+        'The Reasons You Don’t Sleep Well at Night',
+
+        'The Book was Better than the Movie',
+
+        'Millennials are Killing Applebee’s',
+
+        'Lukewarm Soup',
+
+        'That Water Scene from Jurassic Park',
+
+        'Google as a Verb',
+
+        'A Pretzel with Mustard'
 
       ];
 
       name.sort(function() {
         return 0.5 - Math.random()
       });
-
 
       name.forEach(function(element) {
 
@@ -210,8 +221,6 @@ width:50%;
           var textColor = 'white';
         }
 
-
-
         document.getElementById('list').innerHTML += '<div class="box" style="background:rgb(' + red + ',' + green + ',' + blue + ');color:' + textColor + ';">' + element + '</div>';
       });
 
@@ -220,24 +229,17 @@ width:50%;
 
   <header>
     <div class="overlay">
-
       <h1>Horse Neighming<br />Consultants, Inc.</h1>
-
     </div>
-
-
   </header>
 
   <div class="customers">
-
-    <p>Provider of quality horse naming services since 2019.</p>
-    <p>Don’t take it from us. Check out a list of sastified customers below.</p>
-
+    <p>Provider of quality <em>horse naming services</em> since 2019.</p>
+    <p>Don’t take it from us. Check out a list of <em>sastified customers</em> below.</p>
   </div>
 
-
-  <div id="list"></div>
-
+  <div id="list">
+  </div>
   <!-- &#x1F40E; -->
   <a href="https://forms.gle/3v9hF2hTvD5595QC9" class="contact">&#x2709;</a>
 </body>
